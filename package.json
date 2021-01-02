@@ -1,0 +1,23 @@
+{
+  "name": "anime-list",
+  "version": "1.0.0",
+  "description": "test application",
+  "main": "anime.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "narayen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Narayen-Nana/anime-list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Narayen-Nana/anime-list/issues"
+  },
+  "homepage": "https://github.com/Narayen-Nana/anime-list#readme"
+}
