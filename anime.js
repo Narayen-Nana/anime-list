@@ -15,5 +15,5 @@ app.use(express.static(path.join(__dirname ,'public')));
 app.get('/', (req, res) => res.render('pages/html/index.html'));
 
 server.listen(PORT, function() {
-  console.log('server started');
+  console.log('server is working');
 });
