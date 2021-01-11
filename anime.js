@@ -55,6 +55,8 @@ function handleDisconnect()
 
 handleDisconnect();
 
+console.log(__dirname);
+
 // **********************************************************************************************************************
 
 app.post('/validate_user',function(req,res)
