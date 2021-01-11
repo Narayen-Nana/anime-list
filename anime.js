@@ -21,10 +21,10 @@ server.listen(PORT, function() {
 
 
 var sqlInfo = {
-host: 'remotemysql.com',
-user: 'L1kZbhG2Ou',
-password: 'BH8r2ZAZ0g',
-database: 'L1kZbhG2Ou'
+  host: 'remotemysql.com',
+  user: 'L1kZbhG2Ou',
+  password: 'BH8r2ZAZ0g',
+  database: 'L1kZbhG2Ou'
 };
 
 var con;
@@ -56,3 +56,44 @@ function handleDisconnect()
 }
 
 handleDisconnect();
+
+// **********************************************************************************************************************
+
+app.post('/validate_user',function(req,res)
+{
+    console.log(req.body);
+
+    var username = req.body.username;
+    var password = req.body.password;
+
+    var query_string = 'SELECT * FROM login WHERE user_name = "'+username+'"';
+
+    con.query(query_string,function(err,rows)
+	{
+		if(err)
+		{
+			console.log(err);
+			res.sendStatus(500);
+		}
+		else
+		{
+      console.log(rows);
+
+      if (rows.length > 0)
+      {
+          if (rows[0].password == password)
+          {
+              res.sendStatus(200);
+          }
+          else
+          {
+              res.send('Password did not match.');
+          }
+      }
+      else
+      {
+          res.send('User does not exist.');
+      }
+		}
+	})    
+});
