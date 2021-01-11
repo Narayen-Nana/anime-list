@@ -19,7 +19,6 @@ server.listen(PORT, function() {
   console.log('server is working');
 });
 
-
 var sqlInfo = {
   host: 'remotemysql.com',
   user: 'L1kZbhG2Ou',
@@ -28,7 +27,6 @@ var sqlInfo = {
 };
 
 var con;
-
 
 function handleDisconnect()
 {
